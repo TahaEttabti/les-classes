@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Les Classes En JS</title>
+	<link rel="stylesheet" type="text/css" href="js.css">
+</head>
+<body>
+	<div class="back">
+	<h4 id="h1">NOM :</h4><br><input type="text" id="nom" onfocus="this.value=''"><br><br>
+	<h4 id="h2">PRENOM :</h4><br><input type="text" id="prenom" onfocus="this.value=''"><br><br>
+	<h4 id="h3">DATE NAISSANCE :</h4><br><input type="date" id="date" onfocus="this.value=''"><br><br>
+	<h4 id="h4">LIEU DE NAISSANCE :</h4><br><input type="text" id="lieu" onfocus="this.value=''"><br><br>
+	<h4 id="h5">NUMERO DE TELEPHONE :</h4><br><input type="text" id="numero" onfocus="this.value=''"><br><br>
+	<h4 id="h6">ADDRESSE :</h4><br><input type="text" id="addresse" onfocus="this.value=''"><br><br>
+	<button type="button" id="btn" onclick="info()">AFFICHER</button><br><br>
+	<table id="table">
+		<tr>
+			<td>NOM</td>
+			<td>PRENOM</td>
+			<td>DATE DE NAISSANCE</td>
+			<td>LIEU DENAISSANCE</td>
+			<td>NUMERO DE TELEPHONE</td>
+			<td>ADDRESSE</td>
+		</tr>
+	</table>
+    </div>
+</body>
+<script>
+	class Information {
+
+		constructor(name, prenom, naissance, lieu, numero, addresse) {
+				this.name = name;
+				this.prenom = prenom;
+				this.naissance = naissance;
+				this.lieu = lieu;
+				this.numero = numero;
+				this.addresse = addresse;
+			}
+  		}
+
+	function info() {
+			
+		 var name =document.getElementById('nom').value;
+         var prenom =document.getElementById('prenom').value;
+         var date =document.getElementById('date').value;
+         var lieu =document.getElementById('lieu').value;
+         var numero =document.getElementById('numero').value; 
+         var addresse =document.getElementById('addresse').value;	
+
+		let personne =new Information(name,prenom,date,lieu,numero,addresse);
+        var table = document.getElementById('table');
+  			var row = table.insertRow(1);
+  			var cell1 = row.insertCell(0);
+  			var cell2 = row.insertCell(1);
+  			var cell3 = row.insertCell(2);
+  			var cell4 = row.insertCell(3);
+  			var cell5 = row.insertCell(4);
+  			var cell6 = row.insertCell(5);
+  			cell1.innerHTML = personne.name;
+  			cell2.innerHTML = personne.prenom;
+  			cell3.innerHTML = personne.naissance;
+  			cell4.innerHTML = personne.lieu;
+  			cell5.innerHTML = personne.numero;
+  			cell6.innerHTML = personne.addresse;
+      }
+      		
+</script>
+</html>
